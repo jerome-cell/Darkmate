@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up and Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #f5f5f5; /* added background color */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2c3e50;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* added box shadow */
+}
+
+.links {
+  display: flex;
+  gap: 1.2rem;
+  color: aliceblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.links a:hover {
+  font-size: 1.1rem;
+  color: #95a5a6;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+.txt {
+  color: #e74c3c;
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown .dropbtn {
+  background-color: #2c3e50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown .dropbtn:hover {
+  background-color: #333;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #333;
+}
+
+/* Responsive Navbar */
+
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .links {
+    display: none;
+  }
+  .dropdown {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20vh;
+  background-color: #fff; /* changed background color */
+}
+
+.signup {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #3e8e41;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer Styles */
+
+#footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  clear: both;
+}
+
+.footer-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section li {
+  margin-right: 20px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover i {
+  color: #4CAF50;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-section i {
+  font-size: 24px;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+}
+
+.footer-copyright p {
+  margin-bottom: 10px;
+}
+
+.footer-copyright a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 10vh;
+  }
+  .signup {
+    margin-bottom: 10px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding: 10px;
+  }
+  .signup {
+    margin-bottom: 5px;
+  }
+  .form-group {
+    margin-bottom: 5px;
+  }
+}
+  </style>
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshot</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/html/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="register.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<!-- navbar section  -->
+<nav class="navbar-content">
+  <span class="txt">DarkMate</span>
+  <div class="dropdown">
+    <button class="dropbtn">Menu 
+    </button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="#">How to register</a>
+      <a href="#">Refer And Earn</a>
+    </div>
+  </div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href=" ">How to Register</a>
+    <a href="index.html#refer-and-earn">Refer And Earn</a>
+  </div>
+</nav>
+
+<div class="video-container">
+  <video autoplay loop muted>
+    <source src="/img/125844-735656239.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="container">
+  <div class="signup">
+    <h2 style="color: #4CAF50; text-align: center;">Register</h2>
+    <form id="form">
+      <div class="form-group">
+        <label for="from_name">Username</label>
+        <input type="text" placeholder="Username" name="from_name" id="from_name" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Email (Referral ID)</label>
+        <input type="email" placeholder="Email: this is your referral ID" name="name" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Referral ID (if any)</label>
+        <input type="email" placeholder="Referral ID if any" name="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <label for="enter">Age</label>
+        <input type="number" placeholder="Enter Your Age" id="enter" maxlength="2" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" placeholder="Country" id="country" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" placeholder="Phone" name="phone" id="phone" maxlength="13" required>
+      </div>
+      <button type="submit" id="button" class="btn-1">Continue</button>
+    </form>
+  </div>
+</div>
+<!-- Account Details Section -->
+<div class="account-details-container" style="display: none;">
+  <h2>Account Details</h2>
+  <div class="account-details">
+    <p id="account-name"></p>
+    <p id="account-bank"></p>
+    <p id="account-number">
+      <span id="account-number-text"></span>
+      <i class="far fa-copy copy-icon" id="copy-account-number-icon"></i>
+    </p>
+    <p id="amount-to-pay"></p>
+  </div>
+</div>
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-section social">
+      <h3>Stay Connected</h3>
+      <ul>
+        <li><a href="https://facebook.com/yourhandle"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com/yourhandle"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com/yourhandle"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=yourphonenumber"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <p>&copy; 2024 DarkMate. All rights reserved.</p>
+    <p>Designed and Developed by <a href="#" target="_blank">Jay Codex</a></p>
+  </div>
+</footer>
+</body>
+
+</html>

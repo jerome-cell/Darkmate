@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/pay.js"></script>
+    <style>
+        .payment-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-btn {
+  width: 45%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment-btn:hover {
+  background-color: #3e8e41;
+}
+
+.bank-transfer-section,
+.card-payment-section {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.copy-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.copy-btn:hover {
+  background-color: #3e8e41;
+}
+
+.upload-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.upload-btn:hover {
+  background-color: #3e8e41;
+}
+
+#receipt-status {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <!-- Payment Section -->
+<div class="payment-container">
+    <h2>Payment Options</h2>
+    <div class="payment-methods">
+      <button class="payment-btn" id="bank-transfer-btn">Bank Transfer</button>
+      <button class="payment-btn" id="card-payment-btn">Add Bank Card</button>
+    </div>
+  
+    <!-- Bank Transfer Section -->
+    <div class="bank-transfer-section" style="display:none;">
+      <h3>Bank Transfer Details</h3>
+      <p>Account Name: Jay Codex</p>
+      <p>Account Number: <span id="account-number">1234567890</span></p>
+      <p>Bank Name: XYZ Bank</p>
+      <button class="copy-btn" id="copy-account-number-btn">Copy Account Number</button>
+  
+      <h3>Upload Payment Receipt</h3>
+      <input type="file" id="receipt-input" accept=".jpg, .jpeg, .png, .pdf">
+      <button class="upload-btn" id="upload-receipt-btn">Upload Receipt</button>
+      <div id="receipt-status"></div>
+    </div>
+  
+    <!-- Card Payment Section -->
+    <div class="card-payment-section" style="display:none;">
+      <h3>Add Bank Card</h3>
+      <form id="card-payment-form">
+        <input type="text" placeholder="Card Number" id="card-number">
+        <input type="text" placeholder="Expiry Date (MM/YY)" id="expiry-date">
+        <input type="text" placeholder="CVV" id="cvv">
+        <input type="text" placeholder="Cardholder Name" id="cardholder-name">
+        <button class="pay-btn" id="pay-btn">Pay Now</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
